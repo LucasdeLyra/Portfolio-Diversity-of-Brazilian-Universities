@@ -105,7 +105,7 @@ inputs, not fetched by the Scopus article scripts:
   `data/data/raw/CiteScore_2024_annual_values.csv` and
   `data/data/raw/article_subareas.json`. Obtain the CiteScore source file
   through an authorized Elsevier source, place it at that path, and run
-  `python .\data\code\0_refine_citescore.py`.
+  `python .\data\code\0_refine_citescore.py`. In our case, we got those by asking Elsevier's support through e-mail.
 - `0_unify_EMEC_files.py` combines `.xls` files placed in
   `data/data/raw/EMEC/` into `EMEC_institutions.csv`. Obtain those source files
   from the relevant official source before running it.
