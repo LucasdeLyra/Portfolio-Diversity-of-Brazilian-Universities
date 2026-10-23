@@ -1,0 +1,9 @@
+# Validated with Python 3.12.3 for the offline analysis workflow.
+pandas==3.0.6
+numpy==2.5.3
+pyarrow==25.0.1
+
+# Used by the existing CiteScore and Scopus acquisition/preparation scripts.
+polars==2.0.0
+pybliometrics==4.4.1
+lxml==5.2.1
