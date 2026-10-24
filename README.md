@@ -160,18 +160,6 @@ The analysis writes macro- and subject-area ranking folders under
 ranking folder contains `rank.txt`, `labels.csv`, `institutions_names.csv`, and
 `zeros_count.csv`.
 
-## Binary matrices
-
-After ranking matrices have been generated, create row-average binary matrices
-with:
-
-```bash
-python3 analysis/calculate_binary_matrix.py
-```
-
-The script discovers normal and sensitivity ranking folders relative to its own
-location and writes `binary_matrix.csv` beside each valid ranking matrix.
-
 ## External Interdisc step
 
 `interdis.csv` is produced by the external Leydesdorff/Zhang Interdisc 2020
