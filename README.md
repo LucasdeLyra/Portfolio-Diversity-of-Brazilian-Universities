@@ -23,6 +23,17 @@ relative paths from the repository root. The first run may ask you to configure
 the API credentials. Check the `pybliometrics` configuration documentation if
 you need to configure it manually.
 
+### Scopus APIs used
+
+The data collection workflow uses three Elsevier Scopus APIs through
+`pybliometrics`:
+
+| API | Purpose in this project | View used | Views documentation | Script |
+| --- | --- | --- | --- | --- |
+| [Scopus Search API](https://dev.elsevier.com/documentation/SCOPUSSearchAPI.wadl) | Finds Brazilian articles by publication year and subject area. | `STANDARD` | [Search API views](https://dev.elsevier.com/sc_search_views.html) | `data/code/0_brazilian_scopus_articles.py` |
+| [Abstract Retrieval API](https://dev.elsevier.com/documentation/AbstractRetrievalAPI.wadl) | Retrieves full article metadata, including authors and their affiliations, for each search result. | `FULL` | [Abstract Retrieval views](https://dev.elsevier.com/sc_abstract_retrieval_views.html) | `data/code/1_fetchArticle/fetch_article.py` |
+| [Affiliation Retrieval API](https://dev.elsevier.com/documentation/AffiliationRetrievalAPI.wadl) | Retrieves additional details for each institution using its Scopus affiliation ID. | `STANDARD` | [Affiliation Retrieval views](https://dev.elsevier.com/sc_affil_retrieval_views.html) | `data/code/2_fetchInstitutions/get_scopus_institutions.py` |
+
 ### 1. Search for Brazilian articles
 
 Run:
@@ -105,7 +116,7 @@ inputs, not fetched by the Scopus article scripts:
   `data/data/raw/CiteScore_2024_annual_values.csv` and
   `data/data/raw/article_subareas.json`. Obtain the CiteScore source file
   through an authorized Elsevier source, place it at that path, and run
-  `python .\data\code\0_refine_citescore.py`. In our case, we got those by asking Elsevier's support through e-mail.
+  `python .\data\code\0_refine_citescore.py`. In our case, we got those by requesting Elsevier's support through e-mail.
 - `0_unify_EMEC_files.py` combines `.xls` files placed in
   `data/data/raw/EMEC/` into `EMEC_institutions.csv`. Obtain those source files
   from the relevant official source before running it.
